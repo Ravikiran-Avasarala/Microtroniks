@@ -1,0 +1,64 @@
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import React, { useEffect, useState } from 'react';
+import Splash from '../screens/splash/Splash';
+import Login from '../screens/auth/LoginScreen/Login';
+import { useSelector } from 'react-redux';
+import Otp from '../screens/auth/OtpScreen/Otp';
+import SignUp from '../screens/auth/signupscreen/SignupScreen';
+import Success from '../components/template/Success';
+
+const Stack = createNativeStackNavigator();
+
+const options = {
+  headerShown: false,
+};
+const authRoutes = [
+  {
+    name: 'LoginScreen',
+    component: Login,
+    options,
+  },
+  {
+    name: 'Otp',
+    component: Otp,
+    options,
+  },
+  {
+    name: 'SignUp',
+    component: SignUp,
+    options,
+  },
+  {
+    name: 'Success',
+    component: Success,
+    options,
+  },
+]
+
+function ApplicationNavigator() {
+  const [isLoading, setIsLoading] = useState(true);
+  const { isLoggedIn } = useSelector(state => state.config);
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+  }, []);
+  return isLoading ? (
+    <Splash />
+  ) : (
+    <NavigationContainer>
+      <Stack.Navigator>
+        {isLoggedIn ? null : authRoutes.map((route, index) => (
+          <Stack.Screen
+            key={index}
+            name={route.name}
+            component={route.component}
+            options={route.options}
+          />
+        ))}
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
+}
+export default ApplicationNavigator;
