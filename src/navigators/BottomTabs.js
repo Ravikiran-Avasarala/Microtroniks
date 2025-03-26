@@ -14,7 +14,7 @@ import fonts from '../theme/fonts';
 import Home from '../screens/protected/Home';
 import Products from '../screens/protected/Products';
 import HelpDesk from '../screens/protected/HelpDesk';
-import Menu from '../screens/protected/Menu';
+import Menu from '../screens/protected/Menu/Menu';
 
 const Tab = createBottomTabNavigator();
 
