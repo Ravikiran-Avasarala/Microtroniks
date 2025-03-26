@@ -9,6 +9,9 @@ import SignUp from '../screens/auth/signupscreen/SignupScreen';
 import Success from '../components/template/Success';
 import { compose } from '@reduxjs/toolkit';
 import MyTabs from './BottomTabs';
+import MyAccount from '../screens/protected/MenuTab/MyAccount/MyAccount';
+import PaymentHistory from '../screens/protected/MenuTab/Payments/PaymentHistory';
+import ContactUs from '../screens/protected/MenuTab/ContactUs/ContactUs';
 
 const Stack = createNativeStackNavigator();
 
@@ -20,6 +23,21 @@ const protectedRoutes = [
   {
     name: 'MyTabs',
     component: MyTabs,
+    options
+  },
+  {
+    name: 'MyAccount',
+    component: MyAccount,
+    options
+  },
+  {
+    name: 'PaymentHistory',
+    component: PaymentHistory,
+    options
+  },
+  {
+    name: 'ContactUs',
+    component: ContactUs,
     options
   }
 ]

@@ -14,7 +14,7 @@ import fonts from '../theme/fonts';
 import Home from '../screens/protected/Home';
 import Products from '../screens/protected/Products';
 import HelpDesk from '../screens/protected/HelpDesk';
-import Menu from '../screens/protected/Menu/Menu';
+import Menu from '../screens/protected/MenuTab/Menu/Menu';
 
 const Tab = createBottomTabNavigator();
 
@@ -36,7 +36,7 @@ const MyTabs = () => {
                 headerShown: false,
                 tabBarStyle: {
                     backgroundColor: colors.PRIMARY_1, // Dark blue background
-                    // height: 70, // Adjust height
+                    height: 70, // Adjust height
                     borderRadius: 25,
                     margin: 20,
                     alignItems: 'center',
@@ -68,10 +68,10 @@ const MyTabs = () => {
 
             })}
         >
-            <Tab.Screen name="Home" component={Home} />
-            <Tab.Screen name="Products" component={Products} />
-            <Tab.Screen name="HelpDesk" component={HelpDesk} />
-            <Tab.Screen name="Menu" component={Menu} />
+            <Tab.Screen name="Home" component={Home} options={{ backgroundColor: 'white' }}/>
+            <Tab.Screen name="Products" component={Products} options={{ backgroundColor: 'white' }}/>
+            <Tab.Screen name="HelpDesk" component={HelpDesk} options={{ backgroundColor: 'white' }}/>
+            <Tab.Screen name="Menu" component={Menu} options={{ backgroundColor: 'white' }}/>
         </Tab.Navigator>
     )
 }

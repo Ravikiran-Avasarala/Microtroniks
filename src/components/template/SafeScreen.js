@@ -6,12 +6,12 @@ function SafeScreen({
   children,
   statusBar = {
     barStyle: 'dark-content',
-    backgroundColor: colors.PRIMARY_1,
+    backgroundColor: colors.WHITE_COLOR,
   },
-  bg = colors.WHITE_COLOR,
+  
 }) {
   return (
-    <SafeAreaView style={[styles.container, {backgroundColor: bg}]}>
+    <SafeAreaView style={styles.container}>
       <StatusBar
         barStyle={statusBar.barStyle}
         backgroundColor={statusBar.backgroundColor}
@@ -25,5 +25,6 @@ export default SafeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor:colors.WHITE_COLOR
   },
 });
