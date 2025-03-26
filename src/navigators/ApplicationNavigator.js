@@ -7,12 +7,22 @@ import { useSelector } from 'react-redux';
 import Otp from '../screens/auth/OtpScreen/Otp';
 import SignUp from '../screens/auth/signupscreen/SignupScreen';
 import Success from '../components/template/Success';
+import { compose } from '@reduxjs/toolkit';
+import MyTabs from './BottomTabs';
 
 const Stack = createNativeStackNavigator();
 
 const options = {
   headerShown: false,
 };
+
+const protectedRoutes = [
+  {
+    name: 'MyTabs',
+    component: MyTabs,
+    options
+  }
+]
 const authRoutes = [
   {
     name: 'LoginScreen',
@@ -49,7 +59,14 @@ function ApplicationNavigator() {
   ) : (
     <NavigationContainer>
       <Stack.Navigator>
-        {isLoggedIn ? null : authRoutes.map((route, index) => (
+        {isLoggedIn ? protectedRoutes.map((route, index) => (
+          <Stack.Screen
+            key={index}
+            name={route.name}
+            component={route.component}
+            options={route.options}
+          />
+        )) : authRoutes.map((route, index) => (
           <Stack.Screen
             key={index}
             name={route.name}

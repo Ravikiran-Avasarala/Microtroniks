@@ -47,7 +47,9 @@ const Success = (props) => {
                         textAlign: 'center'
                     }}
                 />
-                <MButton
+               
+            </View>
+            <MButton
                     title="Go to home"
                     type='solid'
                     size='large'
@@ -55,7 +57,6 @@ const Success = (props) => {
                     style={styles.buttonStyle}
                     textStyle={styles.buttonTextStyle}
                 />
-            </View>
         </SafeScreen>
 
     )
@@ -64,7 +65,8 @@ const styles = StyleSheet.create({
     buttonStyle: {
         paddingVertical: 20,
         marginTop: 15,
-        marginHorizontal: 10
+        marginHorizontal: 30,
+        marginBottom:30,
     },
     buttonTextStyle: {
         fontFamily: fonts.REGULAR,
