@@ -24,24 +24,39 @@ export default StyleSheet.create({
         alignSelf: 'center',
         alignItems: 'center'
     },
-    contentContainer:{
-        flex:1
+    contentContainer: {
+        flex: 1
     },
-    card:{
-        height:100,
-        borderRadius:16,
-        border:1,
-        borderColor:colors.GRAY,
-        backgroundColor:colors.GRAY_1,
-        
-        padding:20,
+    card: {
+        height: 100,
+        borderRadius: 16,
+        border: 1,
+        borderColor: colors.GRAY,
+        backgroundColor: colors.GRAY_1,
+
+        padding: 20,
         marginTop: 15
     },
     paymentID: {
-        fontFamily:fonts.REGULAR,
-        fontSize:'12',
-        fontWeight:'800',
-        color:colors.BLACK,
-        paddingTop:10
-    }
+        fontFamily: fonts.REGULAR,
+        fontSize: '12',
+        fontWeight: '800',
+        color: colors.BLACK,
+        paddingTop: 10
+    },
+    paymentType: {
+        fontFamily: fonts.REGULAR,
+        fontWeight: '700',
+        fontSize: '12',
+    },
+    paymentDate: {
+        fontFamily: fonts.REGULAR,
+        fontWeight: '500',
+        fontSize: '12',
+        color: colors.SEMI_GREEN
+    },
+    amount:{  fontFamily: fonts.REGULAR,
+        fontWeight: '700',
+        fontSize: '12',
+        color: colors.DARK_GREEN}
 })

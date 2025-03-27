@@ -22,7 +22,6 @@ const Success = (props) => {
                     fontWeight="700"
                     size={28}
                     style={{
-
                         marginTop: 14,
                         fontFamily: fonts.REGULAR,
                         fontWeight: '700',
