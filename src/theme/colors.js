@@ -16,6 +16,8 @@ export default {
     RED:'rgba(253, 77, 79, 1)', //#FD4D4F,
     BLACK: 'rgba(17,17,17,1)', //#1111
     GRAY: 'rgba(240, 240, 240,1)',//#F0F0F0
-    GRAY_1: 'rgba(248,250,252,1)' //#F8FAFC
+    GRAY_1: 'rgba(248,250,252,1)', //#F8FAFC
+    GREEN:'rgba(0,188,28,1)' //#00BC1C,
+    
 
 }

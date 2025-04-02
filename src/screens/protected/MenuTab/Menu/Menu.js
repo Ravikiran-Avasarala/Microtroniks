@@ -20,7 +20,7 @@ const Menu = () => {
     const navigation = useNavigation()
     const options = [{ name: 'My Account', icon: <MyAccountIcon />, navigateTo: 'MyAccount' },
     { name: 'Payments', icon: <PaymentsIcon />, navigateTo:'PaymentHistory' },
-    { name: 'Outpasses', icon: <OutpassesIcon />, navigateTo:'PaymentHistory' },
+    { name: 'Outpasses', icon: <OutpassesIcon />, navigateTo:'OutpassHistory' },
     { name: 'Settings', icon: <SettingsIcon />, navigateTo:'MyAccount' },
     { name: 'Contact', icon: <ContactIcon />, navigateTo:'ContactUs' },
     { name: 'Support Videos', icon: <SupportIcon />, navigateTo:'MyAccount' }]

@@ -26,8 +26,8 @@ const PaymentHistory = () => {
     const closeDetailsModal = useCallback(() => {
         setIsDetailsModal(false);
     }, []);
+
     const renderItem = useCallback(({ item }) => (
-        
             <Pressable style={styles.card} onPress={openDetailsModal}>
                 <View>
                     <MText
