@@ -12,8 +12,10 @@ import MyTabs from './BottomTabs';
 import MyAccount from '../screens/protected/MenuTab/MyAccount/MyAccount';
 import PaymentHistory from '../screens/protected/MenuTab/Payments/PaymentHistory';
 import ContactUs from '../screens/protected/MenuTab/ContactUs/ContactUs';
-import OutpassHistory from '../screens/protected/MenuTab/OutPasses/OutpassHistory';
+
 import OutpassDetailsScreen from '../screens/protected/MenuTab/OutpassDetails/OutPassDetails';
+import OutpassSummary from '../screens/protected/MenuTab/OutpassSummary/OutpassSummary';
+import OutpassHistory from '../screens/protected/MenuTab/OutPassHistory/OutpassHistory';
 
 const Stack = createNativeStackNavigator();
 
@@ -52,7 +54,13 @@ const protectedRoutes = [
     name: 'ContactUs',
     component: ContactUs,
     options
-  }
+  },
+  {
+    name: 'OutpassSummary',
+    component: OutpassSummary,
+    options
+  },
+   
 ]
 const authRoutes = [
   {

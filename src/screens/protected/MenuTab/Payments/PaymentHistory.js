@@ -94,9 +94,6 @@ const PaymentHistory = () => {
                 visible={isDetailsModal}
                 onHide={closeDetailsModal}
                 data={paymentData}
-
-
-
             />
         </SafeScreen>
     )

@@ -17,7 +17,12 @@ export default {
     BLACK: 'rgba(17,17,17,1)', //#1111
     GRAY: 'rgba(240, 240, 240,1)',//#F0F0F0
     GRAY_1: 'rgba(248,250,252,1)', //#F8FAFC
-    GREEN:'rgba(0,188,28,1)' //#00BC1C,
+    GREEN:'rgba(0,188,28,1)', //#00BC1C,
+    BORDER: 'rgba(236, 236, 236, 1)',// #ECECEC,
+    NEUTRAl : 'rgba(16, 16, 16, 1)',// #101010
+    DARK :'rgba(7, 15, 20, 1)',// #070F14
+
+     
     
 
 }

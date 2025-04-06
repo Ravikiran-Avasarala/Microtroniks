@@ -31,7 +31,7 @@ export default StyleSheet.create({
     card: {
         height: 100,
         borderRadius: 16,
-        border: 1,
+        borderWidth: 1,
         borderColor: colors.GRAY,
         backgroundColor: colors.GRAY_1,
 

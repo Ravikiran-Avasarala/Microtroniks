@@ -1,12 +1,12 @@
 import React, { useCallback, useState } from "react";
 import SafeScreen from "../../../../components/template/SafeScreen";
-import styles from "./styles";
 import BackArrow from '../../../../assets/svgs/back.svg'
 import { FlatList, Pressable, Text, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import MText from "../../../../components/template/MText";
 import colors from "../../../../theme/colors";
-import PaymentDetailsModal from "../../../../components/modals/PaymentDetailsModal";
+import OutPassDetailsModal from "../../../../components/modals/OutpassDetailsModal";
+import styles from "./styles";
 
 
 const OutpassHistory = () => {
@@ -42,7 +42,7 @@ const OutpassHistory = () => {
             outpassDate: '10 Oct, 2023',
             amount: '2,300.00'
         }]
-    const paymentData = { pamentid: '1204', trNumber: 'OPN-2324-10-60', mode: 'Phonepe', type: 'Credit', amountType: 'Open balance', amount: '2300', receivedDate: '10 Oct, 2023', createdby: 'Akram' }
+    const outpassData = { outpassId: '1204', outpassFId: 'OPN-2324-10-60', products: [{name:'120 volts batter',qty: '10'},{name:'PCB',qty: '02'},{name:'PCB',qty: '02'},{name:'PCB',qty: '02'},{name:'PCB',qty: '02'},{name:'PCB',qty: '02'},{name:'PCB',qty: '02'},{name:'PCB',qty: '02'},{name:'PCB',qty: '02'},{name:'PCB',qty: '02'},{name:'PCB',qty: '02'},{name:'PCB',qty: '02'},{name:'PCB',qty: '02'}] }
     const goBack = useCallback(() => {
         navigation.pop();
     }, [navigation]);
@@ -54,13 +54,23 @@ const OutpassHistory = () => {
     const closeDetailsModal = useCallback(() => {
         setIsDetailsModal(false);
     }, []);
+    const proceed = useCallback(() => {
+        navigation.push('OutpassSummary')
+    }, []);
 
-    const outPassDetailsNavigate = useCallback(()=>{
-        navigation.push('OutpassDetailsScreen')
+    const outPassDetailsNavigate = useCallback((item)=>{
+        if(item.outpassStatus == 'Delivered'){
+            navigation.push('OutpassDetailsScreen')
+        }else{
+            openDetailsModal()
+        }
+       
     },[])
 
+   
+
     const renderItem = useCallback(({ item }) => (
-        <Pressable style={styles.card} onPress={outPassDetailsNavigate}>
+        <Pressable style={styles.card} onPress={()=>outPassDetailsNavigate(item)}>
             <View>
                 <MText
                     title={`${item.outpassID}`}
@@ -122,13 +132,13 @@ const OutpassHistory = () => {
                 </View>
                 <FlatList data={outpassHistory} renderItem={renderItem} />
             </View>
-            <PaymentDetailsModal
+
+            <OutPassDetailsModal
                 visible={isDetailsModal}
+                proceed={proceed}
                 onHide={closeDetailsModal}
-                data={paymentData}
-
-
-
+                
+                data={outpassData}
             />
         </SafeScreen>
     )
