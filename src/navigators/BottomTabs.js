@@ -13,7 +13,7 @@ import { Text, View } from 'react-native';
 import fonts from '../theme/fonts';
 import Home from '../screens/protected/Home';
 import Products from '../screens/protected/Products';
-import HelpDesk from '../screens/protected/HelpDesk';
+import HelpDesk from '../screens/protected/HelpDesk/HelpDeskHome/HelpDesk';
 import Menu from '../screens/protected/MenuTab/Menu/Menu';
 
 const Tab = createBottomTabNavigator();
@@ -51,13 +51,13 @@ const MyTabs = () => {
                 tabBarIcon: ({ focused }) => {
 
                     if (route.name === 'Home') {
-                        return focused ? <HomeFocused /> : <HomeDisabled />;
+                        return focused ? <HomeFocused width = {25} height={25}/> : <HomeDisabled />;
                     } else if (route.name === 'Products') {
-                        return focused ? <ProductsFocused /> : <ProductsDisabled />;
+                        return focused ? <ProductsFocused width = {25} height={25}/> : <ProductsDisabled />;
                     } else if (route.name === 'HelpDesk') {
-                        return focused ? <HelpdeskFocused /> : <HelpDeskDisabled />;
+                        return focused ? <HelpdeskFocused width = {25} height={25}/> : <HelpDeskDisabled />;
                     } else if (route.name === 'Menu') {
-                        return focused ? <MenuFocused /> : <MenuDisabled />
+                        return focused ? <MenuFocused width = {25} height={25}/> : <MenuDisabled />
                     }
                 },
 

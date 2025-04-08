@@ -16,6 +16,7 @@ import ContactUs from '../screens/protected/MenuTab/ContactUs/ContactUs';
 import OutpassDetailsScreen from '../screens/protected/MenuTab/OutpassDetails/OutPassDetails';
 import OutpassSummary from '../screens/protected/MenuTab/OutpassSummary/OutpassSummary';
 import OutpassHistory from '../screens/protected/MenuTab/OutPassHistory/OutpassHistory';
+import CreateTicket from '../screens/protected/HelpDesk/CreateTicket/CreateTicket';
 
 const Stack = createNativeStackNavigator();
 
@@ -58,6 +59,11 @@ const protectedRoutes = [
   {
     name: 'OutpassSummary',
     component: OutpassSummary,
+    options
+  },
+  {
+    name: 'CreateTicket',
+    component: CreateTicket,
     options
   },
    

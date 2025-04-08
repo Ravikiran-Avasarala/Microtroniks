@@ -42,7 +42,7 @@ const OutpassHistory = () => {
             outpassDate: '10 Oct, 2023',
             amount: '2,300.00'
         }]
-    const outpassData = { outpassId: '1204', outpassFId: 'OPN-2324-10-60', products: [{name:'120 volts batter',qty: '10'},{name:'PCB',qty: '02'},{name:'PCB',qty: '02'},{name:'PCB',qty: '02'},{name:'PCB',qty: '02'},{name:'PCB',qty: '02'},{name:'PCB',qty: '02'},{name:'PCB',qty: '02'},{name:'PCB',qty: '02'},{name:'PCB',qty: '02'},{name:'PCB',qty: '02'},{name:'PCB',qty: '02'},{name:'PCB',qty: '02'}] }
+    const outpassData = { outpassId: '1204', outpassFId: 'OPN-2324-10-60', products: [{ name: '120 volts batter', qty: '10' }, { name: 'PCB', qty: '02' }, { name: 'PCB', qty: '02' }, { name: 'PCB', qty: '02' }, { name: 'PCB', qty: '02' }, { name: 'PCB', qty: '02' }, { name: 'PCB', qty: '02' }, { name: 'PCB', qty: '02' }, { name: 'PCB', qty: '02' }, { name: 'PCB', qty: '02' }, { name: 'PCB', qty: '02' }, { name: 'PCB', qty: '02' }, { name: 'PCB', qty: '02' }] }
     const goBack = useCallback(() => {
         navigation.pop();
     }, [navigation]);
@@ -58,19 +58,19 @@ const OutpassHistory = () => {
         navigation.push('OutpassSummary')
     }, []);
 
-    const outPassDetailsNavigate = useCallback((item)=>{
-        if(item.outpassStatus == 'Delivered'){
+    const outPassDetailsNavigate = useCallback((item) => {
+        if (item.outpassStatus == 'Delivered') {
             navigation.push('OutpassDetailsScreen')
-        }else{
+        } else {
             openDetailsModal()
         }
-       
-    },[])
 
-   
+    }, [])
+
+
 
     const renderItem = useCallback(({ item }) => (
-        <Pressable style={styles.card} onPress={()=>outPassDetailsNavigate(item)}>
+        <Pressable style={styles.card} onPress={() => outPassDetailsNavigate(item)}>
             <View>
                 <MText
                     title={`${item.outpassID}`}
@@ -84,7 +84,7 @@ const OutpassHistory = () => {
             <View style={[styles.row, { paddingTop: 5, alignItems: 'center' }]}>
                 <MText
                     title={`${item.outpassStatus}`}
-                    color={item.outpassStatus == 'Open' ? colors.PRIMARY_COLOR: colors.GREEN}
+                    color={item.outpassStatus == 'Open' ? colors.PRIMARY_COLOR : colors.GREEN}
                     fontWeight="700"
                     size={12}
                     style={styles.paymentType}
@@ -137,7 +137,7 @@ const OutpassHistory = () => {
                 visible={isDetailsModal}
                 proceed={proceed}
                 onHide={closeDetailsModal}
-                
+
                 data={outpassData}
             />
         </SafeScreen>

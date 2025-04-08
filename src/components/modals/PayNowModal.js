@@ -41,16 +41,16 @@ const PayNowModal = ({
                     size={16}
                     style={styles.header}
                 />
-                <View style={[styles.row, styles.justifycontent,styles.alignItems,{marginTop:20}]}>
+                <Pressable style={[styles.row, styles.justifycontent,styles.alignItems,{marginTop:20}]}>
                     <MText title={`Pay Later`} style={styles.payOption} />
                     <RightArrow />
-                </View>
+                </Pressable>
 
                 <View style={{ height: 1, backgroundColor: colors.SEMI_GREEN, width: '100%', marginTop: 10 }} />
-                <View style={[styles.row, styles.justifycontent,styles.alignItems,{marginTop:20}]}>
+                <Pressable style={[styles.row, styles.justifycontent,styles.alignItems,{marginTop:20}]}>
                     <MText title={`Pay Now`} style={styles.payOption} />
                     <RightArrow />
-                </View>
+                </Pressable>
 
 
 

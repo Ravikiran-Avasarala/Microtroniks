@@ -9,6 +9,7 @@ export default {
     GHOST_WHITE: 'rgba(245, 246, 250, 1)', //#F5F6FA,
     GRAY_67:'rgba(171, 171, 171, 1)',//#ABABAB,
     DARK_GREEN: 'rgba(23,52,48,1)',//#173430,
+    LIGHT_GREEN: 'rgba(223, 246, 226, 1)', //#DFF6E2,
     SEMI_GREEN: 'rgba(97,125,121,1)', //#617D79,
     BLUE: 'rgba(4, 4, 21, 1)',//#040415
     DARK_BLUE: 'rgba(17,24,39,1)',//#111827,
@@ -21,6 +22,9 @@ export default {
     BORDER: 'rgba(236, 236, 236, 1)',// #ECECEC,
     NEUTRAl : 'rgba(16, 16, 16, 1)',// #101010
     DARK :'rgba(7, 15, 20, 1)',// #070F14
+    BORDER_COLOR:'rgba(239, 240, 253, 1)',// #EFF0FD
+    SOFT_GREY : 'rgba(246, 247, 247, 1)',// #F6F7F7
+    
 
      
     
