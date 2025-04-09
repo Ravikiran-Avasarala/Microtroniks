@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
-const PrioritySelector = () => {
-    const [priority, setPriority] = useState('Low');
+const PrioritySelector = ({priority,setPriority}) => {
+     
 
 
   return (

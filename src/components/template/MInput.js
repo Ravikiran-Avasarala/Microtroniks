@@ -7,9 +7,13 @@ import {
   TextInput,
   View,
 } from 'react-native';
-import MText from '../../components/template/MText';
-import colors from '../../theme/colors';
+
+
+
+import MText from './MText';
 import fonts from '../../theme/fonts';
+import colors from '../../theme/colors';
+
 
 const MInput = ({
   value,
@@ -19,6 +23,9 @@ const MInput = ({
   error = '',
   editable = true,
   containerStyle,
+  inputContainer,
+  labelStyle,
+  inputStyle,
   leftIcon,
   leftText,
   rightText,
@@ -26,35 +33,32 @@ const MInput = ({
   onRightIconPress,
   keyboardType = 'default',
   maxLength,
-  secureTextEntry = false,
-  autoCapitalize = 'none'
+   
+  multiline = false,
 }) => {
   return (
     <View style={[styles.container, containerStyle]}>
-      {label && (
-        <MText
-          title={label}
-          color={colors.SECONDARY_TEXT}
-          style={styles.label}
-        />
-      )}
-      <View style={styles.inputContainer}>
-        {leftIcon && <Pressable style={styles.leftIcon}>{leftIcon}</Pressable>}
-        {leftText && <Text style={{ color: colors.PRIMARY_TEXT }}>{leftText}</Text>}
+      {label ? (
+        <MText title={label} color={colors.SECONDARY_TEXT} style={[styles.label,labelStyle]} />
+      ) : null}
+      <View style={[styles.inputContainer,inputContainer]}>
+        {leftIcon ? <Pressable style={styles.leftIcon}>{leftIcon}</Pressable> : null}
+        {leftText ? <Text style={{ color: colors.PRIMARY_TEXT }}>{leftText}</Text> : null}
         <TextInput
-          style={[styles.input, !editable && styles.disabled]}
+          style={[styles.input, !editable && styles.disabled,inputStyle]}
           value={value}
           onChangeText={onChangeText}
           placeholder={placeholder}
-          placeholderTextColor={colors.PLACE_HOLDER}
+          placeholderTextColor={colors.PLACEHOLDER_DISABLED_TEXT}
           editable={editable}
           keyboardType={keyboardType}
           maxLength={maxLength}
           autoCorrect={false}
-          secureTextEntry = {secureTextEntry}
-          autoCapitalize={autoCapitalize}
+          multiline = {multiline}
+          minHeight = {multiline ? 160 : undefined}
+          
         />
-        {rightText && <Text style={{ color: colors.PRIMARY_TEXT }}>{rightText}</Text>}
+        {rightText ? <Text style={{ color: colors.PRIMARY_TEXT }}>{rightText}</Text> : null}
         {onRightIconPress && rightIcon ? (
           <Pressable style={styles.rightIcon} onPress={onRightIconPress}>
             {rightIcon}
@@ -63,15 +67,8 @@ const MInput = ({
       </View>
       {error ? (
         <View style={styles.errorContainer}>
-          {/* <Image
-            source={require('../../assets/images/info-circle.png')}
-            style={styles.errorIcon}
-          /> */}
-          <MText
-            title={error}
-            color={colors.ERROR_40}
-            style={styles.errorText}
-          />
+          {/* <Image source={require('../../assets/images/info-circle.png')} style={styles.errorIcon} /> */}
+          <MText title={error} color={colors.RED} style={styles.errorText} />
         </View>
       ) : null}
     </View>
@@ -91,13 +88,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     borderWidth: 1,
-    borderColor: colors.BORDER_COLOR,
-    height: 60,
+    borderColor: colors.BORDER,
+    
     paddingHorizontal: 10,
-    borderRadius: 16,
+    borderRadius: 8,
   },
   leftIcon: {
-    marginLeft:10,
     marginRight: 10,
   },
   input: {
@@ -107,12 +103,18 @@ const styles = StyleSheet.create({
     fontSize: 14,
     width: '100%',
     minHeight: 40,
+    textAlign:'left',
+    textAlignVertical:'top'
   },
   disabled: {
     color: colors.PLACEHOLDER_DISABLED_TEXT,
   },
+  rightIconContainer: {
+    padding: 5,
+  },
   rightIcon: {
-    marginRight:10
+    width: 20,
+    height: 20,
   },
   errorContainer: {
     flexDirection: 'row',
@@ -125,6 +127,6 @@ const styles = StyleSheet.create({
     height: 20,
   },
   errorText: {
-    color: colors.ERROR_40,
+    color: colors.RED,
   },
 });
