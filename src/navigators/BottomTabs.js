@@ -12,7 +12,7 @@ import HelpdeskFocused from '../assets/svgs/tabs/helpdeskfocused.svg';
 import { Text, View } from 'react-native';
 import fonts from '../theme/fonts';
 import Home from '../screens/protected/Home';
-import Products from '../screens/protected/Products';
+import Products from '../screens/protected/Products/ProductsHome/ProductsHome';
 import HelpDesk from '../screens/protected/HelpDesk/HelpDeskHome/HelpDesk';
 import Menu from '../screens/protected/MenuTab/Menu/Menu';
 

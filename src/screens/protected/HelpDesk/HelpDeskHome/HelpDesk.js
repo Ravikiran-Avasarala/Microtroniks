@@ -9,11 +9,12 @@ import ToggleTab from "./ToggleTab";
 import MButton from "../../../../components/template/MButton";
 import PlusIcon from '../../../../assets/svgs/plus.svg'
 import TicketDetailsModal from "../../../../components/modals/TicketDetailsModal";
+import ToggleTabs from "../../../../components/template/ToogleTabs";
 
 
 const HelpDesk = () => {
     const navigation = useNavigation();
-    const [selected, setSelected] = useState('Opened');
+    const [selectedTab, setSelectedTab] = useState('Opened');
     const [tickets, setTickets] = useState([{ name: 'PCB chip is not working properly.', status: 'Open', date: '10 Oct, 2023' }, { name: 'PCB chip is not working properly.', status: 'Resolved', date: '10 Oct, 2023' }, { name: 'PCB chip is not working properly.', status: 'Cancelled', date: '10 Oct, 2023' }]);
     const ticketData = { tNumber: '2324-10-60', tStatus: 'Closed', tRaisedDate: '10 Oct, 2023', tPriority: 'High', tClosedBy: 'Nanda Kishore', tSummary: 'PCB chip is not working properly.', comment: 'PCB chip is not working properly.' }
     const [ticketModal, setTicketModal] = useState(false);
@@ -24,12 +25,12 @@ const HelpDesk = () => {
     const openTicketModal = useCallback(() => {
         setTicketModal(true)
     }, [navigation]);
-    const createTicket = useCallback(()=>{
+    const createTicket = useCallback(() => {
         navigation.push('CreateTicket')
-    },[])
-   
+    }, [])
+
     const renderItem = ({ item }) => {
-      
+
         return (
             <Pressable style={styles.card} onPress={openTicketModal}>
                 <MText title={item.name} size={14} color={colors.BLUE} fontWeight='600' style={styles.headerText} />
@@ -67,7 +68,13 @@ const HelpDesk = () => {
                         style={styles.profile}
                     />
                 </View>
-                <ToggleTab setSelected={setSelected} selected={selected} />
+                <ToggleTabs
+                    tabs={['Opened', 'Closed']}
+                    selected={selectedTab}
+                    setSelected={setSelectedTab}
+                    containerStyle = {{alignItems:'center',paddingTop:20}}
+                />
+                {/* <ToggleTab setSelected={setSelected} selected={selected} /> */}
                 <FlatList data={tickets} renderItem={renderItem} />
                 <MButton
                     title="Open New Ticket"
@@ -76,7 +83,7 @@ const HelpDesk = () => {
                     backgroundColor={colors.SOFT_GREY}
                     style={styles.buttonStyle}
                     textStyle={styles.buttonTextStyle}
-                    onPress = {createTicket}
+                    onPress={createTicket}
                 />
                 <TicketDetailsModal visible={ticketModal}
                     onHide={closeTicketDetailsModal} data={ticketData} />

@@ -49,7 +49,7 @@ const ToggleTab = ({setSelected,selected}) => {
 const styles = StyleSheet.create({
   container: {
     paddingTop:20,
-    alignItems: 'center',
+    // alignItems: 'center',
   },
   toggleContainer: {
     flexDirection: 'row',

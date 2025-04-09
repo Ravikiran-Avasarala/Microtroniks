@@ -33,30 +33,30 @@ const MInput = ({
   onRightIconPress,
   keyboardType = 'default',
   maxLength,
-   
+
   multiline = false,
 }) => {
   return (
     <View style={[styles.container, containerStyle]}>
       {label ? (
-        <MText title={label} color={colors.SECONDARY_TEXT} style={[styles.label,labelStyle]} />
+        <MText title={label} color={colors.SECONDARY_TEXT} style={[styles.label, labelStyle]} />
       ) : null}
-      <View style={[styles.inputContainer,inputContainer]}>
+      <View style={[styles.inputContainer, inputContainer]}>
         {leftIcon ? <Pressable style={styles.leftIcon}>{leftIcon}</Pressable> : null}
         {leftText ? <Text style={{ color: colors.PRIMARY_TEXT }}>{leftText}</Text> : null}
         <TextInput
-          style={[styles.input, !editable && styles.disabled,inputStyle]}
+          style={[styles.input, !editable && styles.disabled, inputStyle]}
           value={value}
           onChangeText={onChangeText}
           placeholder={placeholder}
-          placeholderTextColor={colors.PLACEHOLDER_DISABLED_TEXT}
+          placeholderTextColor={colors.BLACK}
           editable={editable}
           keyboardType={keyboardType}
           maxLength={maxLength}
           autoCorrect={false}
-          multiline = {multiline}
-          minHeight = {multiline ? 160 : undefined}
-          
+          multiline={multiline}
+          minHeight={multiline ? 160 : undefined}
+
         />
         {rightText ? <Text style={{ color: colors.PRIMARY_TEXT }}>{rightText}</Text> : null}
         {onRightIconPress && rightIcon ? (
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderWidth: 1,
     borderColor: colors.BORDER,
-    
+
     paddingHorizontal: 10,
     borderRadius: 8,
   },
@@ -101,10 +101,10 @@ const styles = StyleSheet.create({
     color: colors.PRIMARY_TEXT,
     fontFamily: fonts.REGULAR,
     fontSize: 14,
-    width: '100%',
     minHeight: 40,
-    textAlign:'left',
-    textAlignVertical:'top'
+    paddingVertical: 0, // prevent double padding
+    textAlign: 'left',
+    textAlignVertical: 'top',
   },
   disabled: {
     color: colors.PLACEHOLDER_DISABLED_TEXT,

@@ -8,7 +8,7 @@ import { Provider as ReduxProvider } from 'react-redux';
 const App = () => {
     return (
         <GestureHandlerRootView style={{ flex: 1 }}>
-            <KeyboardAvoidingView
+            {/* <KeyboardAvoidingView
                 style={{ flex: 1 }}
                 keyboardVerticalOffset={0}
                 behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -16,13 +16,13 @@ const App = () => {
                 onTouchStart={() => Keyboard.dismiss()}
                 contentContainerStyle={{ flex: 1 }}
                 keyboardShouldPersistTaps="handled"
-                keyboardDismissMode="on-drag">
+                keyboardDismissMode="on-drag"> */}
                 <ReduxProvider store={store}>
                     <PersistGate loading={null} persistor={persistor}>
                         <ApplicationNavigator />
                     </PersistGate>
                 </ReduxProvider>
-            </KeyboardAvoidingView>
+            {/* </KeyboardAvoidingView> */}
         </GestureHandlerRootView>
     )
 }

@@ -24,6 +24,8 @@ export default {
     DARK :'rgba(7, 15, 20, 1)',// #070F14
     BORDER_COLOR:'rgba(239, 240, 253, 1)',// #EFF0FD
     SOFT_GREY : 'rgba(246, 247, 247, 1)',// #F6F7F7
+    SOFT_GREY_1 : 'rgba(237, 238, 255, 1)',// #EDEEFF
+
     
 
      
